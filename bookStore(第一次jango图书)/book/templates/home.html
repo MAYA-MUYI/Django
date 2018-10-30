@@ -1,0 +1,105 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="page">
+		<div id="top">
+			<div id="top_left">
+				<img alt="" src="{% static './photo/logo.jpg' %}">
+			</div>
+			<div id="top_right">
+				<a href="#">购物车</a>|
+				<a href="#">帮助中心</a>|
+				<a href="#">我的账户</a>|
+				<a href="#">新用户注册</a>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="menu">
+			<a href="#">文学</a>
+			<a href="#">生活</a>
+			<a href="#">计算机</a>
+			<a href="#">外语</a>
+			<a href="#">经管</a>
+			<a href="#">励志</a>
+			<a href="#">社科</a>
+			<a href="#">学术</a>
+			<a href="#">少儿</a>
+			<a href="#">艺术</a>
+			<a href="#">原版</a>
+			<a href="#">科技</a>
+			<a href="#">考试</a>
+			<a href="#">生活百科</a>
+			<a class="all" href="#">全部目录商品</a>
+		</div>
+		<div id="search">
+			<span>Search</span>
+			<input type="text" />
+			<input type="image" src="{% static './photo/search.png'%}" width="20px" height="20px" />
+		</div>
+		<div id="content">
+			<div id="content_top">
+				<span>首页 > 旅游 > 图书列表 </span>
+			</div>
+			<div id="content_bottom">
+				<h1>商品目录</h1>
+				<hr/>
+				<h1>计算机类</h1>
+				<span>共100种商品</span>
+				<hr/>
+				<div id="productlist">
+
+					<div id="booklist">
+                        {% for books in home_infos %}
+						<div class="book">
+							<div class="bookimg">
+{#                                <a href="{% url 'book_id' books.id %}">#}
+                                 <a href="/book/{{ books.id }}.html">
+                                    <img alt="" src="{% static '' %}{{ books.image_path }}">
+{#								    <img alt="" src="/static/{{ books.image_path }}">#}
+{#                                    <img alt="" src="{% static '{{ books.image_path }}' %}">#}
+                                </a>
+							</div>
+							<div class="bookIntr">
+								<span>书名：{{ books.book_name }}</span><br/>
+								<span>作者：{{ books.author }}</span><br/>
+                                <span>评分：{{ books.star }}</span>
+							</div>
+						</div>
+                        {% endfor %}
+						</div>
+                        <div class="clear"></div>
+						<div id="jumpPage">
+                            {% if up %}
+							<a href="#">上一页</a>
+							<a class="current" href="#">1</a>
+							<a href="/page/list_2.html">2</a>
+							<a href="/page/list_3.html">3</a>
+							<a href="/page/list_4.html">4</a>
+							<a href="/page/list_5.html">5</a>
+							<a href="/page/list_6.html">6</a>
+							<a href="/page/list_7.html">7</a>
+							<a href="/page/list_{{up}}.html">下一页</a>
+                            {% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="bottom">
+			<div id="bottom_left">
+				<img alt="" src="images/logo.png">
+			</div>
+			<div id="bottom_right">
+				<span>CONTACT US</span><br/>
+				<span>copyright 2018 &copy; MAYA All Rights RESERVED</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

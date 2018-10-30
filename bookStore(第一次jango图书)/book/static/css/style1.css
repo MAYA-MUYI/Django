@@ -1,0 +1,152 @@
+﻿body{
+	margin: 0px;
+	background: url("../photo/timg.jpg");
+}
+#top_left img{
+	height: 60px;
+	width: 130px;
+}
+.clear{
+		clear:both;
+	}
+#top{
+	background:url("../photo/banner.jpg");
+	height: 60px;
+}
+	#top_left{
+		width:300px;
+		float: left;
+	}
+	#top_right{
+		width:400px;
+		float: right;
+		margin-top:15px;
+		font-size: 13px;
+	}
+	#top_right img{
+		width: 0px;
+		height: 0px;
+	}
+	#top_right a{
+		text-decoration: none;
+		color:#06F;
+	}
+	#top_right a:hover{
+		color:#909;
+	}
+	#menu{
+		background-color: #1C3F09;
+		border-top:5px solid #82B211;
+		padding: 10px 0px;
+		text-align: center;
+		margin-top: 0px;
+	}
+	#menu a{
+		margin: 0 8px;
+		color: #fff;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 15px;
+	}
+	#menu a:hover{
+		color: #999;
+	}
+	#menu .all{
+		color: yellow
+	}
+	#search{
+		background-color: #B6B684;
+		padding:7px 0;
+		text-align: right;
+
+	}
+	#search input[type='image']{
+		/* margin-top: 5px; */
+		margin-right: 250px;
+		margin-bottom: -4px;
+	}
+	#search input[type='text']{
+		height: 16px;
+		border:1px solid #999;
+	}
+
+
+	/*-------------------------------------------------------*/
+
+	#content{
+		width:900px;
+		margin:8px auto 15px;/*auto div居中*/
+	}
+
+	#content_top{
+		text-align: right;
+		font-size:13px;
+	}
+	#content_top span{
+		color: #0066FF;
+	}
+	#content_bottom{
+		border:1px solid #999;
+		background-color: #FCFDEF;
+		padding:10px 15px;
+	}
+	#content_bottom h1{
+		font-size: 15px;
+		display: inline;
+	}
+	#content_bottom span{
+		font-size: 13px;
+	}
+	#productlist_img img{
+		width: 100%;
+	}
+	.book{
+		float: left;
+		width: 25%;
+		text-align: center;
+		padding:10px 0px;
+	}
+	.bookimg img{
+		width: 215px;
+		height: 190px;
+	}
+	#jumpPage{
+		text-align: center;
+		margin: 10px;
+	}
+	#jumpPage a{
+		padding:2px 6px;
+		border: 1px solid #9AAFE5;
+		text-decoration: none;
+		color:#9AAFE5;
+	}
+	.bookimg{
+		background: #0066FF;
+
+	}
+	#jumpPage a:hover{
+		color:#2B66A5;
+		border: 1px solid #2B66A5;
+	}
+	.current{
+		background-color: blue;
+	}
+
+    /*-------------------------------------------------------*/
+
+    #bottom{
+        background-color: #EFEEDC;
+        height:60px;
+        padding:10px 0px;
+    }
+
+	#bottom_left{
+		width: 400px;
+		float: left;
+		margin-left: 200px;
+	}
+	#bottom_right{
+		width: 500px;
+		float: left;
+		line-height:28px;/*行高*/
+	}
