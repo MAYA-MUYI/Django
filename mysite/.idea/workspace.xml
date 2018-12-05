@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8d071651-f68c-4c12-afc0-d76ae9917d2b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/templatetags/comment_tags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/comment/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/likes/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/likes/templatetags/likes_tags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/likes/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/read_statistics/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/blog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery-1.12.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blog/blogs_with_date.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/comment/send_mail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/bind_email.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/forgot_password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/user_info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/context_processors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/file/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/alin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/disk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/dknz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/hym.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/js.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/lf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/lkq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/lry.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/lzs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/play_btn_next.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/play_btn_prev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/play_icn_loop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/play_icn_src.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/play_rdi_btn_pause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/play_rdi_btn_play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/process_btn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/song_play_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/tofirstpage.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/xg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/xuruyun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/zhl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/img/zjx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/css/music.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/alin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/disk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/dknz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/hym.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/js.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/lf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/lkq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/lry.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/lzs_.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/play_disc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/play_needle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/xg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/xuruyun.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/zhl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/img/zjx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/js/lyrics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/js/move.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/js/music.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/A-Lin - 以前，以后.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/JS - 你是此生最美的风景.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/中島美嘉 (なかしま みか) - 僕が死のうと思ったのは (曾经我也想过一了百了).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/刘若英 - 亲爱的路人.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/卡奇社 - 云.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/宇多田ヒカル,椎名林檎 - 二時間だけのバカンス.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/张敬轩 - 后来(国)(Live) - live.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/张敬轩,孙耀威 - 爱的故事上集(Live) - live.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/张洪量 - 美丽花蝴蝶.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/李克勤 - 月半小夜曲 (原曲：ハーフムーン·セレナーデ).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/李宗盛 - 山丘 (Live).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/李宗盛 - 给自己的歌 (Live).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/林凡 - 一个人生活 (《天地传说之鱼美人》电视剧主题曲).mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/许茹芸 - 独角戏.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/迪克牛仔 - 值得.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../oss_test1/static/mp3/黄耀明 - 暗涌(Live) - live.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/SeeMeiSpider/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/SeeMeiSpider/items.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/SeeMeiSpider/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/SeeMeiSpider/middlewares.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/SeeMeiSpider/pipelines.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/SeeMeiSpider/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/SeeMeiSpider/spiders/MzSpider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/SeeMeiSpider/spiders/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/SeeMeizi/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/SeeMeizi/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/SeeMeizi/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/SeeMeizi/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/apps/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/apps/index/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/apps/index/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/apps/index/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/apps/index/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/apps/index/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/apps/index/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/apps/index/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/apps/index/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/css/assets/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/css/assets/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/css/assets/normalize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/css/gallery/foundation.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/css/gallery/set1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/css/responsive.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/about.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/blog-image-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/blog-image-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/blog-image-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/details-image-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/details-image-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/details-image-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/footer-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/09.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/gallery/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/image-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/image-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/image-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/images/nav.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/assets/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/assets/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/assets/modernizr-2.8.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/assets/plugins.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/gallery/imagesloaded.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/gallery/jquery.infinitescroll.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/gallery/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/gallery/masonry.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/jquery.contact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/jquery.nicescroll.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/static/js/maps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test1_KMZ/SeeMeizi/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test7_lagou/spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_blog/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../my_blog/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_blog/article/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../my_blog/article/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_blog/article/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../my_blog/article/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_blog/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../my_blog/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_blog/my_blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../my_blog/my_blog/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_blog/my_blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../my_blog/my_blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_blog/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../my_blog/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_blog/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../my_blog/templates/home.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-33063418">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="25" />
+          <entry key="project.open.time.1" value="4" />
+          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.3" value="2" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.8" value="3" />
+          <entry key="project.open.time.9" value="8" />
+          <entry key="project.opened" value="25" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Navicat Premium" value="1" />
+          <entry key="css" value="23" />
+          <entry key="html" value="86" />
+          <entry key="js" value="1" />
+          <entry key="py" value="231" />
+          <entry key="urls" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="23" />
+          <entry key="HTML" value="86" />
+          <entry key="JavaScript" value="1" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Python" value="231" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="929" />
+          <entry key="html" value="10669" />
+          <entry key="py" value="20905" />
+          <entry key="urls" value="75" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="929" />
+          <entry key="HTML" value="10669" />
+          <entry key="PLAIN_TEXT" value="75" />
+          <entry key="Python" value="20905" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="mysite" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tspan</find>
+      <find>render_to_response</find>
+      <find>date</find>
+      <find>|</find>
+      <find>reply</find>
+      <find>reply_content_container</find>
+      <find>on_delete=models.DO_NOTHING)</find>
+      <find>上一篇</find>
+      <find>oncli</find>
+      <find>likeChang</find>
+      <find>comment</find>
+      <find>{{ comment.pk }}</find>
+      <find>liked_num</find>
+      <find>content_type</find>
+      <find>+</find>
+      <find>like_num</find>
+      <find>modal</find>
+      <find>margin</find>
+      <find>on_delete=models.DO_NOTHING</find>
+      <find>likeChange</find>
+      <find>comment_list</find>
+      <find>render</find>
+      <find>send</find>
+      <find>send_mail</find>
+      <find>get_url</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>on_delete=models.CASCADE)</replace>
+      <replace>ondelete=models.CASCADE</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/comment/templatetags</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/static/js/jquery-1.12.4.min.js" />
+        <option value="$PROJECT_DIR$/templates/blog/blogs_with_type.html" />
+        <option value="$PROJECT_DIR$/blog/urls.py" />
+        <option value="$PROJECT_DIR$/templates/blog/blogs_with_date.html" />
+        <option value="$PROJECT_DIR$/blog/admin.py" />
+        <option value="$PROJECT_DIR$/static/css/home.css" />
+        <option value="$PROJECT_DIR$/comment/urls" />
+        <option value="$PROJECT_DIR$/comment/urls.py" />
+        <option value="$PROJECT_DIR$/templates/error.html" />
+        <option value="$PROJECT_DIR$/mysite/forms.py" />
+        <option value="$PROJECT_DIR$/templates/register.html" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
+        <option value="$PROJECT_DIR$/user/contex_processors.py" />
+        <option value="$PROJECT_DIR$/templates/blog/user_info.html" />
+        <option value="$PROJECT_DIR$/blog/views.py" />
+        <option value="$PROJECT_DIR$/static/css/blog.css" />
+        <option value="$PROJECT_DIR$/comment/admin.py" />
+        <option value="$PROJECT_DIR$/read_statistics/admin.py" />
+        <option value="$PROJECT_DIR$/read_statistics/utils.py" />
+        <option value="$PROJECT_DIR$/static/css/base.css" />
+        <option value="$PROJECT_DIR$/templates/blog/blog_list.html" />
+        <option value="$PROJECT_DIR$/read_statistics/models.py" />
+        <option value="$PROJECT_DIR$/likes/models.py" />
+        <option value="$PROJECT_DIR$/likes/urls.py" />
+        <option value="$PROJECT_DIR$/likes/views.py" />
+        <option value="$PROJECT_DIR$/likes/templatetags/likes_tags.py" />
+        <option value="$PROJECT_DIR$/user/context_processors.py" />
+        <option value="$PROJECT_DIR$/mysite/views.py" />
+        <option value="$PROJECT_DIR$/comment/templatetags/comment_tags.py" />
+        <option value="$PROJECT_DIR$/templates/user/forms.py" />
+        <option value="$PROJECT_DIR$/templates/home.html" />
+        <option value="$PROJECT_DIR$/user/admin.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/blog/blog_detail.html" />
+        <option value="$PROJECT_DIR$/templates/form.html" />
+        <option value="$PROJECT_DIR$/mysite/urls.py" />
+        <option value="$PROJECT_DIR$/user/models.py" />
+        <option value="$PROJECT_DIR$/mysite/settings.py" />
+        <option value="$PROJECT_DIR$/templates/user/user_info.html" />
+        <option value="$PROJECT_DIR$/templates/user/register.html" />
+        <option value="$PROJECT_DIR$/templates/user/login.html" />
+        <option value="$PROJECT_DIR$/templates/user/forgot_password.html" />
+        <option value="$PROJECT_DIR$/templates/user/bind_email.html" />
+        <option value="$PROJECT_DIR$/user/urls.py" />
+        <option value="$PROJECT_DIR$/user/views.py" />
+        <option value="$PROJECT_DIR$/comment/views.py" />
+        <option value="$PROJECT_DIR$/user/forms.py" />
+        <option value="$PROJECT_DIR$/comment/forms.py" />
+        <option value="$PROJECT_DIR$/comment/models.py" />
+        <option value="$PROJECT_DIR$/blog/models.py" />
+        <option value="$PROJECT_DIR$/templates/comment/send_mail.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="979" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mysite" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/comment/templatetags" />
+      <recent name="$PROJECT_DIR$/user" />
+      <recent name="$PROJECT_DIR$/likes/templatetags" />
+      <recent name="$PROJECT_DIR$/likes" />
+      <recent name="$PROJECT_DIR$/comment" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/user" />
+      <recent name="$PROJECT_DIR$/user" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="mysite" type="Python.DjangoServer" factoryName="Django server">
+      <module name="mysite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d071651-f68c-4c12-afc0-d76ae9917d2b" name="Default Changelist" comment="" />
+      <created>1539304565258</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1539304565258</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1920" height="981" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921995" visible="true" weight="0.31842387" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.50078005" side_tool="true" weight="0.27050054" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49840257" weight="0.32996634" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.51277953" side_tool="true" visible="true" weight="0.32845894" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.48722044" visible="true" weight="0.32845894" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/read_statistics/utils.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/comment/views.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/blog/views.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/user/forms.py</url>
+          <line>93</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/user/forms.py</url>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mysite/urls.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/user/forms.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/templates/blog/blog_detail.html</url>
+          <line>152</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/templates/user/bind_email.html</url>
+          <line>47</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/read_statistics/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/read_statistics/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/blog/blogs_with_date.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/read_statistics/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likes/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likes/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likes/templatetags/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/templatetags/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/blog/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comment/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comment/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/read_statistics/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="41" lean-forward="true" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comment/templatetags/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likes/templatetags/likes_tags.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likes/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="62" column="55" lean-forward="true" selection-start-line="62" selection-start-column="55" selection-end-line="62" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/likes/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/context_processors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/blog/blog_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="117" column="26" lean-forward="true" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comment/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/blog/blog_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-778">
+          <caret line="117" column="61" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
+          <folding>
+            <element signature="e#5649#5655#0" expanded="true" />
+            <element signature="e#5711#5717#0" expanded="true" />
+            <element signature="e#6909#7132#0" />
+            <element signature="e#7173#7589#0" />
+            <element signature="e#7621#7676#0" />
+            <element signature="e#7716#8209#0" />
+            <element signature="e#11854#13264#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/forms.py" />
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-623">
+          <caret line="53" column="43" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding>
+            <element signature="e#630#662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1541047104801" expanded="true" signature="543:544" ph="..." />
+            <marker date="1541047104801" expanded="true" signature="635:809" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/user_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="87" column="13" lean-forward="true" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="26" column="97" selection-start-line="26" selection-start-column="97" selection-end-line="26" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/bind_email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+          <folding>
+            <element signature="n#script#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/forgot_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="47" column="14" lean-forward="true" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="7" column="110" selection-start-line="7" selection-start-column="110" selection-end-line="7" selection-end-column="110" />
+          <folding>
+            <marker date="1541997432648" expanded="true" signature="2304:2309" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="258" column="32" lean-forward="true" selection-start-line="258" selection-start-column="32" selection-end-line="258" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#135#1201#0" />
+            <element signature="e#1234#3775#0" />
+            <element signature="e#3820#4639#0" />
+            <element signature="e#4678#6299#0" />
+            <element signature="e#6343#7660#0" />
+            <element signature="e#7704#9164#0" />
+            <marker date="1542110368341" expanded="true" signature="3824:3829" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#499#2232#0" />
+            <element signature="e#2263#2422#0" />
+            <element signature="e#2463#2952#0" />
+            <element signature="e#3004#3289#0" />
+            <element signature="e#3339#3614#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="173" column="1" lean-forward="true" selection-start-line="173" selection-start-column="1" selection-end-line="173" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#300#397#0" />
+            <marker date="1542111132578" expanded="true" signature="936:1068" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-334">
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comment/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="28" column="18" selection-start-line="28" selection-end-line="29" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comment/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comment/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="59" column="63" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comment/templatetags/comment_tags.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/comment/send_mail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
