@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Music{% endblock %}
+{% block nav_blog_active %}active{% endblock %}
+{% load staticfiles %}
+{% block header_extends %}
+    <style>
+    .music_img{
+        width: 40%;
+        position: relative;
+    }
+    .music_img img{
+        width:100%;
+        height: 300px;
+
+    }
+
+    .music  p{
+        position: relative;
+        left: 500px;
+        top: -130px;
+    }
+
+    </style>
+{% endblock %}
+
+{# 页面内容 #}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{% block blog_list_title %}搜索结果{% endblock %}</div>
+                    <div class="panel-body">
+                        {% for x in result %}
+                            <div class="music">
+                                <div class="music_img">
+{#                                    <a href="{% url 'detail' y %}"><img src="{{ x.2 }}"></a>#}
+                                    <a href="{% url 'detail' x.0 %}"><img src="{{ x.2 }}"></a>
+                                </div>
+                                <p class="song">歌曲:{{ x.0 }}</p>
+                                <p class="singer">歌手{{ x.1 }}</p>
+
+                            </div>
+                        {% empty %}
+                            <div class="music_">
+                                <h3>暂无搜索结果，请确认输入项</h3>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

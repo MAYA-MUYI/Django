@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}{% for x in result %}
+    {{ x.0 }}{% endfor %}
+{% endblock %}
+{% block nav_blog_active %}active{% endblock %}
+{% load staticfiles %}
+{% block header_extends %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+{% endblock %}
+
+{# 页面内容 #}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+            {% for x in result %}
+                <h3>{{ x.0 }}</h3>
+                <p>歌手：{{ x.1 }}</p>
+                <img src="{{ x.2 }}">
+            {% empty %}
+                出错啦
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    <section class="tent_info">
+		<div class="col-md-12 col-sm-12 col-xl-12 textarea one">
+			<textarea class="text_send" id="text_send"></textarea>
+			<div class="col-md-12 col-sm-12 col-xl-12 btn btn_send">提交</div>
+		</div>
+	</section>
+{% endblock %}
+    
+{% block script_extends %}
+    <script type="text/javascript" src="{% static 'js/jquery-min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,229 @@
+卷 F 的文件夹 PATH 列表
+卷序列号为 0F02-10B8
+F:.
+│  db.sqlite3
+│  manage.py
+│  settings.py
+│  tree.txt
+│  urls.py
+│  wsgi.py
+│  __init__.py
+│  
+├─.idea
+│      dataSources.local.xml
+│      dataSources.xml
+│      misc.xml
+│      modules.xml
+│      oss_test1.iml
+│      workspace.xml
+│      
+├─file
+│  │  admin.py
+│  │  apps.py
+│  │  models.py
+│  │  test2.py
+│  │  tests.py
+│  │  urls.py
+│  │  views.py
+│  │  __init__.py
+│  │  
+│  ├─migrations
+│  │  │  __init__.py
+│  │  │  
+│  │  └─__pycache__
+│  │          __init__.cpython-36.pyc
+│  │          
+│  ├─templatetags
+│  │  │  url_tag.py
+│  │  │  __init__.py
+│  │  │  
+│  │  └─__pycache__
+│  │          url_tag.cpython-36.pyc
+│  │          __init__.cpython-36.pyc
+│  │          
+│  └─__pycache__
+│          admin.cpython-36.pyc
+│          models.cpython-36.pyc
+│          urls.cpython-36.pyc
+│          views.cpython-36.pyc
+│          __init__.cpython-36.pyc
+│          
+├─media
+│  └─upload
+│      └─2018
+│          └─02
+│              └─05
+│                      lwpbrq.png
+│                      
+├─oss_test1
+│  │  settings.py
+│  │  urls.py
+│  │  wsgi.py
+│  │  __init__.py
+│  │  
+│  └─__pycache__
+│          settings.cpython-36.pyc
+│          urls.cpython-36.pyc
+│          wsgi.cpython-36.pyc
+│          __init__.cpython-36.pyc
+│          
+├─search
+│  │  admin.py
+│  │  apps.py
+│  │  models.py
+│  │  tests.py
+│  │  urls.py
+│  │  views.py
+│  │  __init__.py
+│  │  
+│  ├─migrations
+│  │  │  __init__.py
+│  │  │  
+│  │  └─__pycache__
+│  │          __init__.cpython-36.pyc
+│  │          
+│  └─__pycache__
+│          admin.cpython-36.pyc
+│          models.cpython-36.pyc
+│          urls.cpython-36.pyc
+│          views.cpython-36.pyc
+│          __init__.cpython-36.pyc
+│          
+├─static
+│  │  base.css
+│  │  home.css
+│  │  jquery-1.12.4.min.js
+│  │  
+│  ├─bootstrap-3.3.7
+│  │  ├─css
+│  │  │      bootstrap.min.css
+│  │  │      bootstrap.min.css.map
+│  │  │      
+│  │  ├─fonts
+│  │  │      glyphicons-halflings-regular.eot
+│  │  │      glyphicons-halflings-regular.svg
+│  │  │      glyphicons-halflings-regular.ttf
+│  │  │      glyphicons-halflings-regular.woff
+│  │  │      glyphicons-halflings-regular.woff2
+│  │  │      
+│  │  └─js
+│  │          bootstrap.min.js
+│  │          
+│  ├─cloud
+│  │      黄耀明 - 暗涌(Live) - live.mp3
+│  │      
+│  ├─css
+│  │  │  base.css
+│  │  │  bootstrap.css.map
+│  │  │  bootstrap.min.css
+│  │  │  bootstrap.min.css.map
+│  │  │  bulma.min.css
+│  │  │  index.css
+│  │  │  music.css
+│  │  │  
+│  │  └─img
+│  │          1.jpg
+│  │          alin.jpg
+│  │          disk.png
+│  │          dknz.jpg
+│  │          hym.jpg
+│  │          js.jpg
+│  │          lf.jpg
+│  │          lkq.jpg
+│  │          lry.jpg
+│  │          lzs.jpg
+│  │          play_btn_next.png
+│  │          play_btn_prev.png
+│  │          play_icn_loop.png
+│  │          play_icn_src.png
+│  │          play_rdi_btn_pause.png
+│  │          play_rdi_btn_play.png
+│  │          process_btn.png
+│  │          song_play_icon.png
+│  │          tofirstpage.jpg
+│  │          xg.jpg
+│  │          xuruyun.jpg
+│  │          zhl.jpg
+│  │          zjx.jpg
+│  │          
+│  ├─fonts
+│  │      glyphicons-halflings-regular.eot
+│  │      glyphicons-halflings-regular.svg
+│  │      glyphicons-halflings-regular.ttf
+│  │      glyphicons-halflings-regular.woff
+│  │      glyphicons-halflings-regular.woff2
+│  │      
+│  ├─img
+│  │      alin.jpg
+│  │      disk.png
+│  │      dknz.jpg
+│  │      download.png
+│  │      file.png
+│  │      hym.jpg
+│  │      img.jpg
+│  │      js.jpg
+│  │      lf.jpg
+│  │      lkq.jpg
+│  │      lry.jpg
+│  │      lzs_.jpg
+│  │      play_disc.png
+│  │      play_needle.png
+│  │      search.png
+│  │      timg.jpg
+│  │      upload.png
+│  │      xg.jpg
+│  │      xuruyun.jpg
+│  │      zhl.jpg
+│  │      zjx.jpg
+│  │      
+│  ├─js
+│  │      index.js
+│  │      jquery-min.js
+│  │      lyrics.js
+│  │      move.js
+│  │      music.js
+│  │      
+│  └─media
+├─templates
+│  │  base.html
+│  │  error.html
+│  │  form.html
+│  │  index.html
+│  │  index2.html
+│  │  
+│  ├─file
+│  │      detail.html
+│  │      list.html
+│  │      search_detail.html
+│  │      search_list.html
+│  │      
+│  └─user
+│          bind_email.html
+│          forgot_password.html
+│          login.html
+│          register.html
+│          user_info.html
+│          
+├─user
+│  │  admin.py
+│  │  context_processors.py
+│  │  forms.py
+│  │  models.py
+│  │  urls.py
+│  │  views.py
+│  │  __init__.py
+│  │  
+│  ├─migrations
+│  │  │  0001_initial.py
+│  │  │  0002_auto_20181121_1311.py
+│  │  │  __init__.py
+│  │  │  
+│  │  └─__pycache__
+│  │
+│  │          
+│  └─__pycache__
+│
+│          
+└─__pycache__
+
+        
