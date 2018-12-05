@@ -1,7 +1,7 @@
 # Django
 >somethings with django
-
-=======
+---
+---
 1. __blogproject((博客项目练习)):__ 简单博客练习，仅简单成型，仅基础博客推发以及查看功能，用作初步熟悉Django语法
 ---
 2. __bookStore(第一次jango图书)：__ Django实现的图书网站，爬虫数据结合Django，仅简单展示Django的动态数据
