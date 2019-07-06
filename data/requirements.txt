@@ -1,0 +1,6 @@
+# This file may be used to create an environment using:
+Django==2.1.7
+PyMySQL==0.9.3
+django=2.1.7
+python=3.6.8
+

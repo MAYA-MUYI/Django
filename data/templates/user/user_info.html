@@ -1,0 +1,97 @@
+{% extends 'positions/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    <title>User</title>
+    <meta name="description" content="用户信息页面">
+{% endblock %}
+
+{% block header_extends %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="row-content am-cf">
+        <div class="widget am-cf">
+            <div class="widget-body" style="padding: 0;">
+                <div class="tpl-page-state">
+                {% if user.is_authenticated %}
+                    <div class="container" style="width: 100%; padding: 0; margin: 0">
+                        <div class="profile">
+                          <div class="pro-padding">
+                            <div class="image">
+                                <img src="{% static 'img/p1.jpg' %}" alt="profile img">
+                            </div> <!-- image Ends here -->
+                            <h3 class="name">
+                                {% if user.has_nickname %}
+                                    {{ user.get_nickname }}
+                                {% else %}
+                                    {{ user.username }}
+                                {% endif %}
+                            </h3>
+                                <p>
+                                    {% if user.email %}
+                                        {{ user.email }}
+                                    {% else %}
+                                        Your mailbox has not been bound
+                                    {% endif %}
+
+                                </p>
+                            </a>
+                          </div>
+                        </div> <!-- Profile Ends here -->
+                            <div class="tab">
+                                <div class="sap_tabs">
+                                    <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                                        <ul>
+                                            <li class="resp-tab-item" aria-controls="tab_item-0" role="tab">
+                                                <span>
+                                                    <a href="{% url 'change_nickname' %}?from={{ request.get_full_path }}">
+                                                        修改昵称
+                                                    </a>
+                                                </span>
+                                            </li>
+                                            {% if not user.email %}
+                                                <li class="resp-tab-item" aria-controls="tab_item-0" role="tab">
+                                                    <span>
+                                                        <a href="{% url 'bind_email' %}?from={{ request.get_full_path }}">
+                                                            绑定邮箱
+                                                        </a>
+                                                    </span>
+                                                </li>
+                                            {% endif %}
+                                            <li class="resp-tab-item" aria-controls="tab_item-1" role="tab">
+                                                <span>
+                                                    <a href="{% url 'change_password' %}">
+                                                        修改密码
+                                                    </a>
+                                                </span>
+                                            </li>
+                                            <li class="resp-tab-item" aria-controls="tab_item-1" role="tab">
+                                                <span>
+                                                    <a href="/">
+                                                        返回首页
+                                                    </a>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> <!-- tab Ends here -->
+                    </div>
+                {% else %}
+                    <span>未登录，跳转到首页...</span>
+                    <script type="text/javascript">
+                        window.location.href = '/';
+                    </script>
+                {% endif %}
+                        <!--<button type="button" class="am-btn am-btn-secondary am-radius tpl-error-btn">返回主页</button></div>-->
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

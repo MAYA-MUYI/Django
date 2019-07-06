@@ -1,0 +1,352 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% block title %}
+        <title>Base</title>
+        <meta name="description" content="基础页面">
+    {% endblock %}
+    <meta name="keywords" content="index">
+    <meta name="Access-Control-Allow-Origin" content=" *">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="{% static 'i/favicon.png' %}">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'i/app-icon72x72@2x.png' %}" >
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="{% static 'css/amazeui.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/amazeui.datatables.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    {% block header_extends %}{% endblock %}
+
+</head>
+
+<body data-type="index">
+    <script src="{% static 'js/theme.js' %}"></script>
+    <div class="am-g tpl-g">
+        <!-- 头部 -->
+        <header>
+            <!-- logo -->
+            <div class="am-fl tpl-header-logo">
+                <a href="javascript:;"><img src="{% static 'img/logo.png' %}" alt=""></a>
+            </div>
+            <!-- 右侧内容 -->
+            <div class="tpl-header-fluid">
+                <!-- 侧边切换 -->
+                <div class="am-fl tpl-header-switch-button am-icon-list">
+                    <span>
+
+                </span>
+                </div>
+                <!-- 搜索 -->
+                <div class="am-fl tpl-header-search">
+                    <form class="tpl-header-search-form" action="javascript:;">
+                        <button class="tpl-header-search-btn am-icon-search" id="submit"></button>
+                        <input class="tpl-header-search-box" type="text" placeholder="搜索内容..." id="search">
+                    </form>
+                </div>
+                <!-- 其它功能-->
+                <div class="am-fr tpl-header-navbar">
+                    <ul>
+                        <!-- 欢迎语 -->
+                        <li class="am-text-sm tpl-header-navbar-welcome">
+                            {% if not user.is_authenticated %}
+                            <a href="{% url 'login' %}">
+                                <span>未登录用户</span>
+                            </a>
+                            {% else %}
+                                <a href="{% url 'user_info' %}">
+                                    <span>欢迎你, {{ user.username }}</span>
+                                </a>
+                            {% endif %}
+                        </li>
+
+                        <!-- 新邮件 -->
+                        <li class="am-dropdown tpl-dropdown" data-am-dropdown>
+                            <a href="javascript:;" class="am-dropdown-toggle tpl-dropdown-toggle" data-am-dropdown-toggle>
+                                <i class="am-icon-envelope"></i>
+                                <span class="am-badge am-badge-success am-round item-feed-badge">4</span>
+                            </a>
+                            <!-- 弹出列表 -->
+                            <ul class="am-dropdown-content tpl-dropdown-content">
+                                <li class="tpl-dropdown-menu-messages">
+                                    <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                        <div class="menu-messages-ico">
+                                            <img src="{% static 'img/user04.png' %}" alt="">
+                                        </div>
+                                        <div class="menu-messages-time">
+                                            3小时前
+                                        </div>
+                                        <div class="menu-messages-content">
+                                            <div class="menu-messages-content-title">
+                                                <i class="am-icon-circle-o am-text-success"></i>
+                                                <span>夕风色</span>
+                                            </div>
+                                            <div class="am-text-truncate"> 你所关注的公司有最新职业发布，赶紧去看看吧。 </div>
+                                            <div class="menu-messages-content-time">2019-03-21 下午 16:40</div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="tpl-dropdown-menu-messages">
+                                    <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                        <div class="menu-messages-ico">
+                                            <img src="{% static 'img/user02.png' %}" alt="">
+                                        </div>
+                                        <div class="menu-messages-time">
+                                            5天前
+                                        </div>
+                                        <div class="menu-messages-content">
+                                            <div class="menu-messages-content-title">
+                                                <i class="am-icon-circle-o am-text-warning"></i>
+                                                <span>Chris</span>
+                                            </div>
+                                            <div class="am-text-truncate"> 谷歌最近聘请了一个外部伦理委员会，来处理人工智能领域较为棘手的问题,但一周还没过去，该委员会已经几近分崩离析。 </div>
+                                            <div class="menu-messages-content-time">2019-03-16 上午 09:23</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="tpl-dropdown-menu-messages">
+                                    <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                        <i class="am-icon-circle-o"></i> 进入列表…
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- 新提示 -->
+                        <li class="am-dropdown" data-am-dropdown>
+                            <a href="javascript:;" class="am-dropdown-toggle" data-am-dropdown-toggle>
+                                <i class="am-icon-bell"></i>
+                                <span class="am-badge am-badge-warning am-round item-feed-badge">5</span>
+                            </a>
+
+                            <!-- 弹出列表 -->
+                            <ul class="am-dropdown-content tpl-dropdown-content">
+                                <li class="tpl-dropdown-menu-notifications">
+                                    <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                        <div class="tpl-dropdown-menu-notifications-title">
+                                            <i class="am-icon-line-chart"></i>
+                                            <span> 有6条来自关注公司的动态</span>
+                                        </div>
+                                        <div class="tpl-dropdown-menu-notifications-time">
+                                            12分钟前
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="tpl-dropdown-menu-notifications">
+                                    <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                        <div class="tpl-dropdown-menu-notifications-title">
+                                            <i class="am-icon-star"></i>
+                                            <span> 有3个来自人事部的消息</span>
+                                        </div>
+                                        <div class="tpl-dropdown-menu-notifications-time">
+                                            30分钟前
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="tpl-dropdown-menu-notifications">
+                                    <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                        <div class="tpl-dropdown-menu-notifications-title">
+                                            <i class="am-icon-folder-o"></i>
+                                            <span> 求职意向存档</span>
+                                        </div>
+                                        <div class="tpl-dropdown-menu-notifications-time">
+                                            1天前
+                                        </div>
+                                    </a>
+                                </li>
+
+
+                                <li class="tpl-dropdown-menu-notifications">
+                                    <a href="javascript:;" class="tpl-dropdown-menu-notifications-item am-cf">
+                                        <i class="am-icon-bell"></i> 进入列表…
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- 退出 -->
+                        <li class="am-text-sm">
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'logout' %}?from={{ request.get_full_path }}">
+                                    <span class="am-icon-sign-out"></span> 退出
+                                </a>
+                            {% else %}
+                                <a href="{% url 'login' %}?from={{ request.get_full_path }}">
+                                    <span class="am-icon-sign-out"></span> 登录
+                                </a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+        <!-- 风格切换 -->
+        <div class="tpl-skiner">
+            <div class="tpl-skiner-toggle am-icon-cog">
+            </div>
+            <div class="tpl-skiner-content">
+                <div class="tpl-skiner-content-title">
+                    选择主题
+                </div>
+                <div class="tpl-skiner-content-bar">
+                    <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                    <span class="skiner-color skiner-black" data-color="theme-black"></span>
+                </div>
+            </div>
+        </div>
+        <!-- 侧边导航栏 -->
+        <div class="left-sidebar">
+            <!-- 用户信息 -->
+            <div class="tpl-sidebar-user-panel">
+                <div class="tpl-user-panel-slide-toggleable">
+                    <div class="tpl-user-panel-profile-picture">
+                        <img src="{% static 'img/user04.png' %}" alt="">
+                    </div>
+
+                    <span class="user-panel-logged-in-text">
+
+              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+
+                        {% if  user.is_authenticated %}
+                            {% if user.has_nickname %}
+                                {{ user.nickname }}
+                            {% else %}
+                                {{ user.username }}
+                            {% endif %}
+
+                        {% else %}
+                            未登录用户
+                        {% endif %}
+
+          </span>
+                    <a href="{% url 'user_info' %}" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
+                </div>
+            </div>
+
+            <!-- 菜单 -->
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-heading">Components <span class="sidebar-nav-heading-info"> 附加组件</span></li>
+                <li class="sidebar-nav-link">
+                    <a href="{% url 'home' %}" class="active">
+                        <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="{% url 'tables' %}">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 表格
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="{% url 'calendar' %}">
+                        <i class="am-icon-calendar sidebar-nav-link-logo"></i> 日历
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="">
+                        <i class="am-icon-wpforms sidebar-nav-link-logo"></i> 表单
+
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="{% url 'chart' %}">
+                        <i class="am-icon-bar-chart sidebar-nav-link-logo"></i> 图表
+
+                    </a>
+                </li>
+
+                <li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
+                <li class="sidebar-nav-link">
+                    <a href="javascript:;" class="sidebar-nav-sub-title">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 数据列表
+                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+                    </a>
+                    <ul class="sidebar-nav sidebar-nav-sub">
+                        <li class="sidebar-nav-link">
+                            <a href="{% url 'positions_list' %}">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 文字列表
+                            </a>
+                        </li>
+
+                        <li class="sidebar-nav-link">
+                            <a href="table-list-img.html">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 图文列表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="{% url 'register' %}?from={{ request.get_full_path }}">
+                        <i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
+                        <span class="am-badge am-badge-secondary sidebar-nav-link-logo-ico am-round am-fr am-margin-right-sm">6</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="{% url 'login' %}?from={{ request.get_full_path }}">
+                        <i class="am-icon-key sidebar-nav-link-logo"></i> 登录
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="{% url 'error' %}">
+                        <i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- 内容区域 -->
+        <div class="tpl-content-wrapper">
+
+            {% block panel %}{% endblock %}
+
+            {% block content %}{% endblock %}
+
+        </div>
+    </div>
+
+    {% block other_content %}{% endblock %}
+    
+
+    <script src="{% static 'js/amazeui.min.js' %}"></script>
+    <script src="{% static 'js/amazeui.datatables.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script>
+        function contains(arr, obj) {
+            var i = arr.length;
+            while (i--) {
+                if (arr[i] === obj) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        var cates_list = {{ cates |safe}};
+        var submit = document.getElementById('submit');
+        submit.onclick = function () {
+            var search = document.getElementById('search');
+            var cate = search.value.replace(/^\s+|\s+$/g,"");
+            if (cate ==""){
+                alert("搜索项不能为空");
+            }else {
+                if(contains(cates_list, cate)){
+                    window.location.href = 'http://127.0.0.1:8000/positions/type/'+ cate
+                }else {
+                    alert("这也没有呀老铁")
+                }
+            }
+        }
+
+
+    </script>
+    {% block script_extends %}{% endblock %}
+</body>
+
+</html>

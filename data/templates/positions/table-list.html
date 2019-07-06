@@ -1,0 +1,175 @@
+{% extends 'positions/base.html' %}
+{% load staticfiles %}
+
+<!-- 标题设置-->
+{% block title %}
+        <title>Table-list</title>
+        <meta name="description" content="高薪职位推荐">
+{% endblock %}
+
+<!-- 内容上方内容设置-->
+{% block  content %}
+    <div class="row-content am-cf">
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title  am-cf">高薪职位推荐</div>
+                            </div>
+                            <div class="widget-body  am-fr">
+
+                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+                                    <div class="am-form-group">
+                                        <div class="am-btn-toolbar">
+                                            <div class="am-btn-group am-btn-group-xs">
+                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 更多</button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 关注</button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 联系</button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 不看这页</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+                                    <div class="am-form-group tpl-table-list-select">
+                                        <select id="pid" data-am-selected="{btnSize: 'sm'}"  onchange="redirect()" >
+                                            <option value="option0">所有类别</option>
+                                            {% for data in cates %}
+                                                <option  value="option{{ data.0}}" >{{ data.1}}</option>
+                                            {% endfor %}
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
+                                    <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
+                                        <input type="text" class="am-form-field " id="search_cate">
+                                        <span class="am-input-group-btn">
+            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button" id="btn"></button>
+          </span>
+                                    </div>
+                                </div>
+                                <div class="am-u-sm-12">
+                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                        <thead>
+                                            <tr>
+                                                <th>职位名称</th>
+                                                <th>行业类型</th>
+                                                <th>薪资待遇</th>
+                                                <th>工作城市</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for position in positions %}
+                                            <tr class="gradeX">
+                                                <td><a href="{% url 'positions_detail'  position.pk %}">{{ position.job_name }}</a></td>
+                                                <td>{{ position.cate_name }}</td>
+                                                <td>{{ position.salary_range }}</td>
+                                                <td>{{ position.working_city }}</td>
+                                            </tr>
+
+                                        {% endfor %}
+                                            <!-- more data -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="am-u-lg-12 am-cf">
+
+                                    <div class="am-fr">
+                                        <ul class="am-pagination tpl-pagination">
+                                            <!--#上一页-->
+
+                                                {% if page_of_positions.has_previous %}
+
+                                                    <li class="am-enabled">
+                                                        <a href="?page={{ page_of_positions.previous_page_number }}" aria-label="Previous">
+                                                            &laquo;
+                                                        </a>
+                                                    </li>
+                                                {% else %}
+                                                    <li class="am-disabled">
+                                                        <a href="?page={{ page_of_blogs.number }}" aria-label="Previous">
+                                                            &laquo;
+                                                        </a>
+                                                    </li>
+                                                {% endif %}
+
+                                            <!--#全部页码-->
+                                                {% for page_num in page_range %}
+                                                    {% if page_num == page_of_positions.number %}
+                                                        <li class="am-active"><a href="">{{ page_num }}</a></li>
+                                                    {% else %}
+                                                        {% if page_num == '...' %}
+                                                            <li class="am-enabled"><a href="">{{ page_num }}</a></li>
+                                                        {% else %}
+                                                            <li><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endfor %}
+
+                                            <!--#下一页-->
+                                                {% if page_of_positions.has_next %}
+                                                    <li>
+                                                        <a href="?page={{ page_of_positions.next_page_number }}" aria-label="Next">
+                                                        &raquo;
+                                                        </a>
+                                                    </li>
+                                                {% else %}
+                                                    <li class="am-disabled">
+
+                                                        <a href="">&raquo;</a>
+                                                    </li>
+
+                                                {% endif %}
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+
+{% block script_extends %}
+    <script type="text/JavaScript">
+    function redirect() {
+        var objS = document.getElementById("pid");
+        var index = objS.selectedIndex;
+        var val = objS[index].text;
+        window.location.href="http://127.0.0.1:8000/positions/type/"+ val;
+    }
+
+</script>
+<script>
+        function contains(arr, obj) {
+            var i = arr.length;
+            while (i--) {
+                if (arr[i] === obj) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        var cates_list = {{ cates |safe}};
+        var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            var search_cate = document.getElementById('search_cate');
+            var cate = search_cate.value.replace(/^\s+|\s+$/g,"");
+            if (cate ==""){
+                alert("搜索项不能为空");
+            }else {
+                if(contains(cates_list, cate)){
+                    window.location.href = 'http://127.0.0.1:8000/positions/type/'+ cate
+                }else {
+                    alert("这也没有呀老铁")
+                }
+            }
+        }
+
+
+    </script>
+{% endblock %}

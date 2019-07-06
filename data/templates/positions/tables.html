@@ -1,0 +1,232 @@
+{% extends 'positions/base.html' %}
+{% load staticfiles %}
+
+<!-- 标题设置-->
+{% block title %}
+    <title>Table</title>
+    <meta name="description" content="表格页面展示职位信息">
+{% endblock %}
+
+{% block  panel %}
+    <div class="container-fluid am-cf">
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
+                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 表格 <small>Amaze UI</small></div>
+                        <p class="page-header-description">岗位表格数据信息展示。</p>
+                    </div>
+                    <div class="am-u-lg-3 tpl-index-settings-button">
+                        <button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> 设置</button>
+                    </div>
+                </div>
+
+            </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row-content am-cf">
+
+
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-6">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">高薪职位推荐</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body  widget-body-lg am-fr">
+                                <div class="am-scrollable-horizontal ">
+                                    <table width="100%" class="am-table am-table-compact am-text-nowrap tpl-table-black " id="example-r">
+                                        <thead>
+                                            <tr>
+                                                <th>职位</th>
+                                                <th>薪资</th>
+                                                <th>工作城市</th>
+                                                <th>学历要求</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                                {% for data in high_salary_positions %}
+                                                    <tr class="gradeX">
+                                                        <td>{{ data.job_name }}</td>
+                                                        <td>{{ data.salary_range }}</td>
+                                                        <td>{{ data.working_city }}</td>
+                                                        <td>{{ data.job_name }}</td>
+
+                                                        <td>{{ data}}</td>
+                                                        <td>{{ data.0.1 }}</td>
+                                                        <td>{{ data.0.2 }}</td>
+                                                        <td>{{ data.0.3 }}</td>
+                                                    </tr>
+                                                {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-6">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">热门公司速递</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body  widget-body-lg am-fr">
+                                    <table width="100%" class="am-table am-table-compact tpl-table-black " id="example-r">
+                                        <thead>
+                                            <tr>
+                                                <th>公司</th>
+                                                <th>标签</th>
+                                                <th>融资情况</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for data in company_info %}
+                                            <tr class="gradeX">
+                                                <td>{{ data.0 }}</td>
+                                                <td>{{ data.1 }}</td>
+                                                <td>{{ data.2 }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                            <!-- more data -->
+                                        </tbody>
+                                    </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-6">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">各城市岗位数量情况</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body  widget-body-lg am-fr">
+
+                                <table width="100%" class="am-table am-table-compact am-table-bordered tpl-table-black " id="example-r">
+                                    <thead>
+                                        <tr>
+                                            <th>城市</th>
+                                            <th>岗位数量</th>
+                                            <th>岗位占比</th>
+                                            <th>平均工资</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for data in city_positions %}
+                                        <tr class="gradeX">
+                                            <td>{{ data.0 }}</td>
+                                            <td>{{ data.1 }}</td>
+                                            <td>{{ data.2 }}%</td>
+                                            <td>{{ data.3 }}K</td>
+                                        </tr>
+                                    {% endfor %}
+                                        <!-- more data -->
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-6">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">不同领域情况一览</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body  widget-body-lg am-fr">
+
+                                <table width="100%" class="am-table am-table-compact am-table-bordered am-table-radius am-table-striped tpl-table-black " id="example-r">
+                                    <thead>
+                                        <tr>
+                                            <th>职业领域</th>
+                                            <th>顶薪[均值]</th>
+                                            <th>底薪[均值]</th>
+                                            <th>岗位占比</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for data in cate_infos %}
+                                        <tr class="gradeX">
+                                            <td>{{ data.0 }}</td>
+                                            <td>{{ data.1 }}K</td>
+                                            <td>{{ data.2 }}K</td>
+                                            <td>{{ data.3 }}%</td>
+                                        </tr>
+
+                                    {% endfor %}
+
+                                        <!-- more data -->
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">最新职业速递</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body  widget-body-lg am-fr">
+
+                                <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                    <thead>
+                                        <tr>
+                                            <th>职业</th>
+                                            <th>薪资</th>
+                                            <th>城市</th>
+                                            <th>时间</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for data in recently_positions %}
+                                            <tr class="gradeX">
+                                                <td>{{ data.0 }}</td>
+                                                <td>{{ data.1 }}</td>
+                                                <td>{{ data.2 }}</td>
+                                                <td>{{ data.3 }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+{% endblock %}

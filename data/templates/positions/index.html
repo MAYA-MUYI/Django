@@ -1,0 +1,342 @@
+{% extends 'positions/base.html' %}
+{% load staticfiles %}
+
+<!-- 标题设置-->
+{% block title %}
+        <title>Home</title>
+        <meta name="description" content="主页">
+{% endblock %}
+
+<!-- 引用文件设置-->
+{% block header_extends %}
+    <script src="{% static 'js/echarts.min.js' %}"></script>
+    <script src="{% static 'js/wordcloud2.js' %}"></script>
+{% endblock %}
+
+<!-- 内容上方面板设置-->
+{% block  panel %}
+    <div class="container-fluid am-cf">
+        <div class="row">
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
+                <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 职业可视化分析 <small></small></div>
+                <p class="page-header-description">网站所有信息均来自拉勾网，仅供学习参考。</p>
+            </div>
+            <div class="am-u-lg-3 tpl-index-settings-button">
+                <button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> 设置</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<!-- 内容设置-->
+{% block content %}
+    <div class="row-content am-cf">
+                <div class="row  am-cf">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-4">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">本月职位数量情况</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body am-fr">
+                                <div class="am-fl">
+                                    <div class="widget-fluctuation-period-text" >
+                                        {{ this_month_count }}
+                                        <button class="widget-fluctuation-tpl-btn">
+                        <i class="am-icon-calendar"></i>
+                        更多月份
+                      </button>
+                                    </div>
+                                </div>
+                                <div class="am-fr am-cf">
+                                    <div class="widget-fluctuation-description-amount text-success" am-cf style="padding-left: 40px">
+                                        +{{ changed_count.0.1 }}
+                                    </div>
+                                    <div class="widget-fluctuation-description-text am-text-right" style="padding-top: 10px">
+                                        {% for data in changed_count %}
+                                            {% if  data.0 == 1 %}
+                                                本月新增岗位数量
+                                            {% else %}
+                                                本月减少岗位数量
+                                            {% endif %}
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                        <div class="widget widget-primary am-cf">
+                            <div class="widget-statistic-header">
+                                今日最高薪职位
+                            </div>
+                            <div class="widget-statistic-body">
+                                <div class="widget-statistic-value" style="font-size: 31px; line-height: 31px">
+                                    {{ salary_top }}
+                                </div>
+                                <div class="widget-statistic-description" style="padding-top: 20px">
+                                    薪资范围： <strong>{{ salary_top_range }}</strong> 人民币
+                                </div>
+                                <span class="widget-statistic-icon am-icon-credit-card-alt"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
+                        <div class="widget widget-purple am-cf">
+                            <div class="widget-statistic-header">
+                                最热门行业TOP1
+                            </div>
+                            <div class="widget-statistic-body">
+                                <div class="widget-statistic-value" style="font-size: 31px; line-height: 31px">
+                                    {{ hot_position }}
+                                </div>
+                                <div class="widget-statistic-description" style="padding-top: 20px">
+                                    平均工资： <strong>{{ average_salary }}K</strong> 人民币
+                                </div>
+                                <span class="widget-statistic-icon am-icon-support"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row am-cf">
+                    <div class="am-u-sm-12 am-u-md-8">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">各职位顶薪梯度</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body-md widget-body tpl-amendment-echarts am-fr" id="tpl-echarts">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="am-u-sm-12 am-u-md-4">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">热门行业市场占比</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body widget-body-md am-fr">
+
+                                <div class="am-progress-title">移动互联网 <span class="am-fr am-progress-title-more">{{ internet_rate }}% / 100%</span></div>
+                                <div class="am-progress">
+                                    <div class="am-progress-bar" style="width: {{ internet_rate }}%"></div>
+                                </div>
+                                <div class="am-progress-title">电子商务 <span class="am-fr am-progress-title-more">{{ commerce }}% / 100%</span></div>
+                                <div class="am-progress">
+                                    <div class="am-progress-bar  am-progress-bar-warning" style="width: {{ commerce }}%"></div>
+                                </div>
+                                <div class="am-progress-title">其他 <span class="am-fr am-progress-title-more">{{ other }}% / 100%</span></div>
+                                <div class="am-progress">
+                                    <div class="am-progress-bar am-progress-bar-danger" style="width: {{ other }}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row am-cf">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-4 widget-margin-bottom-lg ">
+                            <canvas id="card_canvas" style="width: 100%; height: 330px;"  ></canvas>
+
+
+                    </div>
+
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-8 widget-margin-bottom-lg">
+
+                        <div class="widget am-cf widget-body-lg">
+
+                            <div class="widget-body  am-fr">
+                                <div class="am-scrollable-horizontal ">
+                                    <table width="100%" class="am-table am-table-compact am-text-nowrap tpl-table-black " id="example-r">
+                                        <thead>
+                                            <tr>
+                                                <th>今日职业推荐</th>
+                                                <th>工资</th>
+                                                <th>城市</th>
+                                                <th>学历要求</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for position in today_positions %}
+                                                <tr class="gradeX">
+                                                    <td>{{ position.job_name }}</td>
+                                                    <td>{{ position.salary_range }}</td>
+                                                    <td>{{ position.working_city }}</td>
+                                                    <td>{{ position.education_required }}</td>
+                                                    <td>
+                                                        <div class="tpl-table-black-operation">
+                                                            <a href="javascript:;">
+                                                                <i class="am-icon-pencil"></i> 编辑
+                                                            </a>
+                                                            <a href="javascript:;" class="tpl-table-black-operation-del">
+                                                                <i class="am-icon-trash"></i> 删除
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+
+
+
+                                            <!-- more data -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+
+{% block script_extends %}
+    <!--  动态柱状图 -->
+    <script>
+        var myChart = echarts.init(document.getElementById('tpl-echarts'));
+        var positions = [];
+        var salary = [];
+
+        {% for key, value in result.items %}
+            positions.push("{{ key }}")
+            salary.push("{{ value }}")
+        {% endfor %}
+
+        var tmp_positions = positions.slice(0,8)
+        var tmp_salary = salary.slice(0,8);
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#283b56'
+                }
+            }
+        },
+            toolbox: {
+            show: true,
+            feature: {
+                dataView: {readOnly: false},
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+            xAxis: {
+                type: 'category',
+                data: tmp_positions,
+                name: '职位',
+                nameTextStyle:{
+                    color: '#CCFFFF'
+                },
+                textStyle:{
+                    color: '#CCFFFF'
+                },
+                grid: {
+                    left: '10%',
+                    bottom:'35%'
+                    },
+                axisLabel: {
+                    interval:0,
+                    rotate:30,
+                    interval:0,
+                    textStyle: {
+                                color: '#CCFFFF'
+                            },
+                } ,
+            },
+
+            yAxis: {
+                type: 'value',
+                scale: true,
+                name: '最高工资(K)',
+                nameTextStyle:{
+                    color: '#CCFFFF'
+                },
+                axisLabel: {
+                    textStyle: {
+                                color: '#CCFFFF'
+                    },
+                } ,
+            },
+            series: [{
+                data: tmp_salary ,
+                type: 'bar'
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        var i = tmp_positions.length;
+        setInterval(function(){
+            tmp_salary.push(salary[i+1]);
+            tmp_salary.shift();
+
+            tmp_positions.push(positions[i+1]);
+            tmp_positions.shift();
+            i++;
+            myChart.setOption({
+                xAxis: {
+                    data: tmp_positions
+                },
+                series: [{
+                    data: tmp_salary
+                }]
+            });
+            }, 2000)
+
+
+
+    </script>
+
+    <!--  词云 -->
+    <script>
+        var lists = {{ words_list|safe }};
+
+        var options = eval({
+            "list": lists[Math.floor((Math.random()*lists.length))],
+            "gridSize": 16, // size
+            // of the grid in pixels
+            "weightFactor": 10, // number to multiply for size of each word in the list
+            "fontWeight": 'normal', // 'normal', 'bold' or a callback
+            "fontFamily": 'Times, serif', // font to use
+            "color": 'random-light', // 'random-dark' or 'random-light'
+            "backgroundColor": '#333', // the color of canvas
+            "rotateRatio": 1 // probability for the word to rotate. 1 means always rotate
+        });
+        var canvas = document.getElementById('card_canvas');
+        WordCloud(canvas, options);
+
+        setInterval(function(){
+            var options = eval({
+            "list": lists[Math.floor((Math.random()*lists.length))],
+            "gridSize": 16, // size of the grid in pixels
+            "weightFactor": 10, // number to multiply for size of each word in the list
+            "fontWeight": 'normal', // 'normal', 'bold' or a callback
+            "fontFamily": 'Times, serif', // font to use
+            "color": 'random-light', // 'random-dark' or 'random-light'
+            "backgroundColor": '#333', // the color of canvas
+            "rotateRatio": 1 // probability for the word to rotate. 1 means always rotate
+        });
+            WordCloud(canvas, options);
+        }, 3000)
+</script>
+{% endblock %}
+
+
