@@ -1,0 +1,101 @@
+﻿{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+<title>电影选购</title>
+<link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="{% static 'js/jquery-1.7.2.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/phone.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/TouchSlide.1.1.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/movie.js' %}"></script>
+</head>
+
+<body>
+<div class="whole">
+	<!--头部轮播-->
+    <div id="carousel" class="carousel">
+	  	<div class="hd">
+			<ul></ul>
+      	</div>
+      <div class="bd">
+            <ul>
+                <li><a href="#"><img _src="{% static 'image/哥斯拉2：怪兽之王_timg.jpg' %}" src="{% static 'image/blank.png' %}"></a></li>
+                <li><a href="details.html"><img _src="{% static 'image/lunbo.jpg' %}" src="{% static 'image/blank.png' %}"></a></li>
+                <li><a href="#"><img _src="{% static 'image/哆啦A梦：大雄的月球探险记_timg.jpg' %}" src="{% static 'image/blank.png' %}"></a></li>
+                <li><a href="#"><img _src="{% static 'image/追龙Ⅱ_timg.jpg' %}" src="{% static 'image/blank.png' %}"></a></li>
+                <li><a href="#"><img _src="{% static 'image/X战警：黑凤凰_timg.jpg' %}" src="{% static 'image/blank.png' %}"></a></li>
+            </ul>
+      </div>
+        <div class="search sear-show">
+        	<img src="{% static 'image/search.png' %}">
+        </div>
+        <div class="search-new">
+        	<input type="text" value="" placeholder="请输入您要搜索的内容">
+            <div class="sear"><img src="{% static 'image/search.png' %}"></div>
+            <div class="close"><i class="fa fa-forward"></i></div>
+        </div>
+    </div>
+    <!--头部轮播END-->
+    
+    <div class="movie">
+      <ul>
+          {% for data in datas %}
+              <li>
+            	<a href="{% url 'detail' data.movie_base_id %}">
+                    <span class="tag">{{ data.star }}</span>
+                    <div class="posters">
+{#                        <img src="{{ data.pic }}">#}
+                        <img src="{% static data.pic %}" alt="">
+
+                    </div>
+                    <div class="post-content">
+                        <div class="left-con">
+                            <p class="tit">
+                            	<small>{{ data.movie_name }}  {% if data.vision %}<span>
+                                    <i>{{ data.vision }}</i>
+                                </span>{% endif %}
+
+                                </small>
+
+                            </p>
+                            <p class="eng">
+                                {% if data.ellipsis_length < 20 %}
+                                    {{ data.ellipsis }}
+                                {% endif %}
+                            </p>
+                            <p class="act">动作 警匪 犯罪</p>
+                            <p class="tim">上映时间<span>{{ data.time }}</span></p>
+                        </div>
+                        <div class="right-btn">
+                            <div class="ticket-btn">购票</div>
+                        </div>
+                    </div>
+                 </a>
+            </li>
+          {% endfor %}
+        </ul>
+    </div>
+    
+</div>
+<script type="text/javascript">
+	TouchSlide({ 
+		slideCell:"#carousel",
+		titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+		mainCell:".bd ul", 
+		effect:"left", 
+		autoPlay:true,//自动播放
+		autoPage:true, //自动分页
+		switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+	});
+</script>
+<script>
+    {% if not user.is_authenticated %}
+        window.location.href = "/user/register";
+    {% endif %}
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+﻿{% load  staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html">
+
+<title>详情</title>
+<link href="{% static 'css/details.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'js/layer-v3.0.3/layer/mobile/need/layer.css' %}" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{% static 'js/jquery-1.7.2.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/phone.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/layer-v3.0.3/layer/layer.js' %}"></script>
+</head>
+
+<body>
+<div class="whole">
+    {% for data in datas %}
+	<div class="movie">
+    	<div class="back"><img src="{% static 'image/back.png' %}"></div>
+    	<img src="{% static data.timg %}">
+        <span>
+        	<img src="{% static 'image/start.png' %}">
+        </span>
+    </div>
+    <div class="detail">
+    	<div class="bol"><img src="{% static 'image/bg-bg.png' %}"></div>
+        <div class="det-con">
+        	<div class="common det-c">
+            	<div class="jz-pic">
+                	<img src="{% static data.pic %}">
+                </div>
+                <div class="det-inf">
+                	<p class="det-titles">
+                    	<span>{{ data.movie_name }}</span>
+                        <span class="eng">{{ data.ellipsis }}</span>
+                    </p>
+                    <ul class="stars">
+                    	<li><img src="{% static 'image/stars.png' %}"></li>
+                        <li><img src="{% static 'image/stars.png' %}"></li>
+                        <li><img src="{% static 'image/stars.png' %}"></li>
+                        <li><img src="{% static 'image/stars.png' %}"></li>
+                        <li><img src="{% static 'image/stars.png' %}"></li>
+                    </ul>
+                    <p class="det-tag"> {{ data.type }}</p>
+                    
+                </div>
+            </div>
+            
+            <div class="common parti">
+            	<span>{{ data.introduction }}</span>
+            </div>
+            
+            <div class="common stage-photo">
+            	<h3>剧照和视频</h3>
+                <ul class="stills">
+                	<li><img src="{% static data.stills1 %}"></li>
+                    <li><img src="{% static data.stills3 %}"></li>
+                    <li><img src="{% static data.stills4 %}"></li>
+                    <li><img src="{% static data.stills2 %}"></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <a class="footer" href="{% url 'cinemas' data.movie_base_id %}">立即订票</a>
+    {% endfor %}
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$('.movie').click(function(){
+		movie();
+	});
+	
+	function movie(){
+		layer.open({
+		  type: 2,
+		  title: false,
+		  area: ['630px', '360px'],
+		  shade: 0.8,
+		  closeBtn: 0,
+		  shadeClose: true,
+		  content: 'movies/meigonghe.mp4'
+		});	
+	}
+	
+	$('.back').on('click',function(){
+		window.history.go(-1);
+	});
+	
+});
+</script>
+<script>
+    {% if not user.is_authenticated %}
+        window.location.href = "/user/register";
+    {% endif %}
+</script>
+</body>
+</html>

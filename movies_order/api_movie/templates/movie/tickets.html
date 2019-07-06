@@ -1,0 +1,143 @@
+﻿{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+<title>电影选购</title>
+<link href="{% static 'css/tickets.css' %}" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="{% static 'js/jquery-1.7.2.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/phone.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/menu_x.js' %}"></script>
+<style>
+    .hide{display:none;}
+</style>
+</head>
+
+<body>
+<div class="whole">
+    {% for data in  datas %}
+	<header class="header">
+        <a href="javascript:history.back(-1)" class="fa fa-angle-left"></a>
+        <span class="names"> {{ data.cinema_name }}</span>
+        <span class="collect">
+        	<i class="fa fa-star-o"></i>
+        </span>
+    </header>
+    
+    <div class="film-length">
+    	<span>片长：{{ data.duration }} 分钟</span>
+        <span class="imax">
+            {% if  data.vision %}
+                原版{{ data.vision }}
+            {% endif %}
+        </span>
+    </div>
+    
+    <div class="tips">温馨提示：电影开场前30分钟关闭在线售票</div>
+    
+    <div class="tab date">
+        <!---tab日期标签滑动--->
+        <div id="J_MenuX">
+            <div class="xs-container">
+                <ul class="xs-content nav nav-pills nav-justified" id="menus_xx" _xx="0">
+                    {% for date in data.date_list %}
+                    <li>{{ date }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <!---tab标签滑动END--->
+    </div>
+    <div id="sessions">
+        {% for result in data.movie_session.0.0.session_result%}
+            <div  class="show" >
+                        <ul>
+                            <li>
+                                <div class="ticket-info">
+                                    <span class="start">{{ result.begin_time }}</span>
+                                    <span class="styles">{{ result.lang }}</span>
+                                    <span>{{ result.end_time }}</span>
+                                    <span>{{ result.hall }}</span>
+                                </div>
+                                <div class="buy-btn">
+                                    <span>{{ data.price }}<b>元</b></span>
+                                    <a href="{% url 'choose' data.movie_base_id data.cinema_id result.begin_time result.end_time result.lang result.hall data.movie_session.0.0.date %}">选座购票</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+        {% endfor %}
+        {% for sessions in data.other_day %}
+            {% for result in sessions.0.0.session_result %}
+                <div  class="hide" >
+                    <ul>
+                        <li>
+                            <div class="ticket-info">
+                                <span class="start">{{ result.begin_time }}</span>
+                                <span class="styles">{{ result.lang }}</span>
+                                <span>{{ result.end_time }}</span>
+                                <span>{{ result.hall }}</span>
+                            </div>
+                            <div class="buy-btn">
+                                <span>{{ data.price }}<b>元</b></span>
+                                <a href="{% url 'choose' data.movie_base_id data.cinema_id result.begin_time result.end_time result.lang result.hall sessions.0.0.date %}">选座购票</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            {% endfor %}
+        {% endfor %}
+     </div>
+    {% endfor %}
+</div>
+
+<script type="text/javascript">
+	var menux = new menuX("#J_MenuX",0);
+</script>
+
+<script type="text/javascript">
+$(function(){
+	
+	$('.collect .fa').click(function(){
+		if($(this).hasClass('fa-star-o')){
+			$(this).removeClass('fa-star-o').addClass('fa-star');
+		}else{
+			$(this).removeClass('fa-star').addClass('fa-star-o');
+		}
+	});
+		
+})
+</script>
+<script>
+    // JS实现选项卡切换
+    window.onload = function(){
+        var myTab = document.getElementById("sessions");
+        var myUl = document.getElementById("menus_xx");//一个节点
+        var myLi = myUl.getElementsByTagName("li");    //数组
+        var myDiv = myTab.children; //数组
+
+
+        for(var i = 0; i<myLi.length;i++){
+            myLi[i].index = i;
+            myLi[i].onclick = function(){
+                console.log(myDiv[this.index].className);
+                for(var j = 0; j < myLi.length; j++){
+                    myDiv[j].className = "hide";
+                }
+                myDiv[this.index].className = "show";
+            }
+        }
+    }
+
+</script>
+<script>
+    {% if not user.is_authenticated %}
+        window.location.href = "/user/register";
+    {% endif %}
+</script>
+
+</body>
+</html>

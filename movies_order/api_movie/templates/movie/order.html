@@ -1,0 +1,105 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Order</title>
+	<meta name="description" content="Order">
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+  	<link rel="stylesheet" href="{% static 'css/zerogrid.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+	<link rel="stylesheet" href="{% static 'css/component.css' %}">
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+	
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+	<link href='{% static "image/favicon.ico" %}' rel='icon' type='image/x-icon'/>
+    
+</head>
+<body style="background: url({% static datas.0.pic %}) no-repeat center center fixed;">
+<div class="wrap-body">
+
+<!--////////////////////////////////////Header-->
+<header>
+
+</header>
+
+
+<!--////////////////////////////////////Container-->
+<section id="container">
+	<div class="wrap-container zerogrid">
+		<div class="row">
+			<div class="col-1-2">
+				<div class="wrap-col">
+					<article class="bg-red">
+						<div class="art-header">
+							<img src="{% static datas.0.timg %}"/>
+						</div>
+						<div class="art-content">
+							<div class="col-1-3 right">
+								<div class="wrap-col">
+									<div class="info">
+										<ul class="clearfix">
+											<li><img src="{% static 'image/avatar.png' %}"/>
+                                                {{ user.username }}
+                                            </li>
+											<li>{{ datas.0.time }} </li>
+                                            <li>{{ datas.0.end }}</li>
+											<li>{{ datas.0.lang }}</li>
+											<li class="last"> {{ datas.0.seats }}</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-2-3 bg-white">
+								<div class="wrap-col">
+									<div class="main-post">
+										<h2 class="title">{{ datas.0.movie_name }}  ({{ datas.0.vision }})</h2>
+										<p>&#160;&#160;&#160;&#160;&#160;&#160;{{ datas.0.introduction|striptags|truncatechars:150 }}<br/>
+                                            &#160;&#160;&#160;&#160;&#160;&#160;片长：{{ datas.0.duration }}分钟 &#160;&#160;&#160;语言：{{ datas.0.hall }} &#160;&#160;价格：{{ datas.0.price }}元</p>
+                                        <p>地址：{{ datas.0.cinema_name }} - {{ datas.0.address }}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+        <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div>	
+
+	</div>
+</section>
+
+<!--////////////////////////////////////Footer-->
+
+</div>
+<script>
+    {% if not user.is_authenticated %}
+        window.location.href = "/user/register";
+    {% endif %}
+</script>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/navigation.js' %}"></script>
+</body></html>

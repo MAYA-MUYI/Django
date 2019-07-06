@@ -1,0 +1,242 @@
+﻿{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html">
+
+<title>详情</title>
+<link href="{% static 'css/seat.css' %}" type="text/css" rel="stylesheet">
+<link href="{% static 'js/layer-v3.0.3/layer/mobile/need/layer.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'js/layer-v3.0.3/layer/mobile/need/layer.css' %}" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{% static 'js/jquery-1.7.2.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/phone.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/layer-v3.0.3/layer/mobile/layer.js' %}"></script>
+</head>
+
+<body>
+<div class="whole">
+
+
+	<header class="header">
+        <a href="javascript:history.back(-1)" class="fa fa-angle-left"></a>
+        <span class="names">{{ datas.0.movie_name }}</span>
+    </header>
+    
+    <div class="seat_head">
+    	<h3>{{ datas.0.cinema_name }}</h3>
+        <span>
+        	<a>{{ date }}&#160;</a>
+            <a>{{ begin }}&#160;&#160;</a>
+            {% if datas.0.vision %}
+                <a class="vision" >({{ datas.0.vision }})</a>
+            {% endif %}
+        </span>
+    </div>
+    
+    <div class="seat_show">
+    	<ul>
+        	<li>
+            	<i></i>
+                <span >可选</span>
+            </li>
+            <li>
+            	<i></i>
+                <span>已售</span>
+            </li>
+            <li>
+            	<i></i>
+                <span>已选</span>
+            </li>
+            <li>
+            	<i></i>
+                <span>最佳区域</span>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="seat_choose">
+    	<div class="number" id="num"></div>
+    	<div class="seats" id="seats"></div>
+        
+    </div>
+    <div class="buttons">
+        确认选择
+    </div>
+
+</div>
+
+<script>
+$(function(){
+	var html='';
+		html+='<ul class="touchs" id="touchs"><div class="screen">大厅屏幕</div>';
+		for(var i=1; i<=204; i++){
+			var selected = (i>91&&i<98 ? 'selected' : '');
+			html+='<li class="'+selected+'">';
+			html+='<input type="checkbox" name="seat-'+i+'" id="seat-'+i+'" />';
+			html+='<label for="seat-'+i+'"></label>';
+			html+='</li>';
+		}
+		html+='<div class="the_best"></div><div class="crossnum" id="crossnum"></div></ul>';
+		$('#seats').html(html);
+		
+	
+	$('.selected').children('input').attr({'disabled':'disabled','checked':'checked'});
+	
+		
+	$('.seats li input').on('click',function(){
+		var checklen = $('.seats li').not('.selected').children('input:checked').length;
+		console.log(checklen);
+		if(checklen>2){
+			popu('最多只能选择两个座位');
+			return false;
+		}
+	});
+
+	
+	//公用弹出层
+	function popu(content){
+		layer.open({
+			content: content
+			,skin: 'msg'
+			,time: 3
+		});	
+	}
+	
+	
+	var num='';
+		num+='<ul>';
+		for(var i=1; i<=12; i++){
+			num+='<li>'+i+'</li>';
+		}
+		html+='</ul>';
+		$('#num').html(num);
+		
+	var crossnum='';
+		crossnum+='<ul>';
+		for(var j=1; j<=17; j++){
+			crossnum+='<li>'+j+'</li>';
+		}
+		html+='</ul>';
+		$('#crossnum').html(crossnum);
+	
+	
+	
+});
+
+</script>
+
+<!---拖拽js--->
+<script>
+$(function(){
+    var flag = false;
+    var cur = {
+        x:0,
+        y:0
+    }
+    var nx,ny,dx,dy,x,y ;
+    function down(){
+        flag = true;
+        var touch ;
+        if(event.touches){
+            touch = event.touches[0];
+        }else {
+            touch = event;
+        }
+        cur.x = touch.clientX;
+        cur.y = touch.clientY;
+        dx = div2.offsetLeft;
+        dy = div2.offsetTop;
+    }
+    function move(){
+        if(flag){
+            var touch ;
+            if(event.touches){
+                touch = event.touches[0];
+            }else {
+                touch = event;
+            }
+            nx = touch.clientX - cur.x;
+            ny = touch.clientY - cur.y;
+            x = dx+nx;
+            y = dy+ny;
+            div2.style.left = x+"px";
+            //div2.style.top = y +"px";
+
+			
+            //阻止页面的滑动默认事件
+            document.addEventListener("touchmove",function(){
+                //event.preventDefault();
+            },false);
+        }
+    }
+    //鼠标释放时候的函数
+    function end(){
+        flag = false;
+    }
+    var div2 = document.getElementById("touchs");
+    div2.addEventListener("mousedown",function(){
+        down();
+    },false);
+    div2.addEventListener("touchstart",function(){
+        down();
+    },false)
+    div2.addEventListener("mousemove",function(){
+        move();
+    },false);
+    div2.addEventListener("touchmove",function(){
+        move();
+    },false)
+    document.body.addEventListener("mouseup",function(){
+        end();
+    },false);
+    div2.addEventListener("touchend",function(){
+        end();
+    },false);
+	
+});
+</script>
+
+<script>
+    $('.buttons').on('click', function () {
+	    index_list = [];
+        for (var i =0;i<$('.seats li').not('.selected').children('input:checked').length;i++){
+		    index_list.push($('.seats li').not('.selected').children('input:checked')[i].id);
+        }
+
+        $.ajax({
+            url: "{% url 'ajax_get' %}",
+            data: JSON.stringify({    // JSON格式封装数据
+                "seats": index_list,
+            }),
+            contentType: 'application/json',
+            type: "POST",
+            traditional: true,
+            success: function(r){
+                console.log(r);
+                var movies = {{ datas.0|safe }};
+                var movie_base_id = movies.movie_base_id;
+                console.log("ascasc:", movie_base_id);
+                var seats_num = r['seats_num'];
+                var begin = "{{ begin|safe }}";
+                var end = "{{ end|safe }}";
+                var hall = "{{ hall|safe }}";
+                var lang = "{{ lang|safe }}";
+                var date = "{{ date|safe }}";
+                window.location.href = "http://127.0.0.1:3000/order/" + movies.movie_base_id + "/" + movies.cinema_id + "/" + movies.time + "/" + begin + "/" + end + "/" + hall + "/" + lang + "/" + date + "/" + seats_num;
+            },
+            error: function(xhr){
+                    console.log(xhr);
+                }
+        });
+
+    });
+</script>
+<script>
+    {% if not user.is_authenticated %}
+        window.location.href = "/user/register";
+    {% endif %}
+</script>
+
+</body>
+</html>

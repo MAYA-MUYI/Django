@@ -1,0 +1,71 @@
+﻿{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+<title>电影选购</title>
+<link href="{% static 'css/film_cinema.css' %}" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="{% static 'js/jquery-1.7.2.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/phone.js' %}"></script>
+</head>
+
+<body>
+<div class="whole">
+
+	<header class="header">
+        <a href="javascript:history.back(-1)" class="fa fa-angle-left"></a>
+        <span class="names">{{ datas.0.movie_name }} </span>
+    </header>
+    
+    <div class="film_content">
+    	<div class="tab">
+        	<ul>
+            	<li class="active">附近<i class="fa fa-caret-down"></i></li>
+                <li>区域<i class="fa fa-caret-down"></i></li>
+                <li>服务<i class="fa fa-caret-down"></i></li>
+                <li>其他<i class="fa fa-caret-down"></i></li>
+            </ul>
+        </div>
+        <div class="address">
+        	<ul>
+                {% for data in datas %}
+                    <li>
+                        <a href="{% url 'cinemas_detail' data.movie_base_id data.cinema_name %}">
+                            <div class="film_addr">
+                                <span>{{ data.cinema_name }}</span>
+                                <p>{{ data.price }}<span>元起</span></p>
+                                {% if  data.cinema_id < 2 %}
+                                    <span class="resort">常去影院</span>
+                                {% endif %}
+
+                            </div>
+                            <div class="det_addr">
+                                <span>{{ data.address }}</span>
+                                <p>{{ data.distance }}km</p>
+                            </div>
+                            <div class="session">
+                                近期场次：{% for time in data.recent_session %}
+                                    {{ time }}|
+                                {% endfor %}
+
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+    
+</div>
+
+</body>
+<script>
+    {% if not user.is_authenticated %}
+        window.location.href = "/user/register";
+    {% endif %}
+</script>
+</html>

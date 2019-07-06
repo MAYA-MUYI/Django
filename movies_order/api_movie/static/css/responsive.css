@@ -1,0 +1,29 @@
+/*
+
+*/
+
+html {?webkit-text-size-adjust: none;}
+.video embed,.video object,.video iframe { width: 100%;  height: auto;}
+img{max-width:100%;	height: auto;width: auto\9; /* ie8 */}
+
+
+
+
+@media only screen and (max-width: 767px) {
+	.menu {float: none;}
+	.menu a {border-bottom: 1px solid #1111111;}
+    .toggleMenu.active {display: block;}
+    .menu > li {float: none;}
+    .menu > li > .parent {background-position: 95% 50%;}
+    .menu li li .parent {background-image: url("../images/downArrow.png"); background-repeat: no-repeat; background-position: 95% 50%;}
+    .menu ul {display: block; width: 100%;}
+   .menu > li.hover > ul , .menu li li.hover ul {position: static;}
+   
+   
+   .top-header{padding: 0 10px;}
+	header {margin-top: 0px;height:400px;}
+	header #logo{margin-left: 10px;}
+	.container {display: inline-block;}/*Fix Menu*/
+	
+	.page-single .art-related img{max-width: 230px;}
+}
