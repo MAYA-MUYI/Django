@@ -1,11 +1,7 @@
 #coding=utf8
 import random
-from django.http.response import HttpResponse
-import json
-from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from movies_tickets import query
 from movies_tickets import query
 import os
 import re

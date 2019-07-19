@@ -109,7 +109,6 @@ def test(text):
         tmp_result.append(get_MovieData(movie)[0])
     with open('files/' + cinema_name + '.json', 'a+', encoding='utf-8') as f:
         f.write(json.dumps(tmp_result, ensure_ascii=False, indent=2))
-            # f.write(json.dumps(get_MovieData(movie)[0], ensure_ascii=False, indent=2))
 
 
 def get_MovieData(movie):
@@ -135,30 +134,6 @@ def get_MovieData(movie):
 
     return movie_session
 
-def test2(text):
-    movie_session = []
-    html = etree.HTML(text)
-    movies_list = html.xpath('//div[contains(@class, "show-list")]')
-    movie = movies_list[0]
-    movie_name = movie.xpath('.//h3[@class="movie-name"]/text()')[0]
-    if movie.xpath('.//span[@class="score sc"]/text()'):
-        star = movie.xpath('.//span[@class="score sc"]/text()')[0]
-    else:
-        star = '暂无评分'
-    time_list = movie.xpath('.//div[@class="show-date"]/span/text()')[1:]
-    days = movie.xpath('.//div[contains(@class, "plist-container")]')
-    for day in days:
-        print(json.dumps(getToday(day, time_list, days.index(day)), ensure_ascii=False))
-    # day = days[0]
-    # return getToday(day, time_list, days.index(day))
-    # for day in days:
-    #     movie_session.append({
-    #         "movie_name": movie_name,
-    #         "star": star,
-    #         "result": getToday(day, time_list, days.index(day))
-    #     })
-    # return movie_session
-
 
 def parse(text):
     html = etree.HTML(text)
@@ -173,8 +148,6 @@ def parse(text):
     days = html.xpath('//div[@data-index="0"]//div[contains(@class, "plist-container")]')
     for day in days:
         print(json.dumps(getToday(day, time_list, days.index(day)), ensure_ascii=False))
-    # print(getToday(days[1], time_list, 1))
-
 
 
 if __name__ == '__main__':
@@ -183,9 +156,6 @@ if __name__ == '__main__':
         "https://maoyan.com/cinemas?districtId=3798",
         "https://maoyan.com/cinemas?areaId=-1&districtId=3802",
     ]
-    # cinemas = getUrls(urls)
-    # for url in cinemas:
-    #     test(requests.get(url, headers=headers).text)
-
-    # url = "https://maoyan.com/cinema/16627?poi=124675060"
-    # test(requests.get(url, headers=headers).text)
+    cinemas = getUrls(urls)
+    for url in cinemas:
+        test(requests.get(url, headers=headers).text)
