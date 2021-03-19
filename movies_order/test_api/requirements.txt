@@ -1,5 +1,5 @@
 django==2.1
-djangorestframework==3.3.2
+djangorestframework==3.11.2
 requests==2.9.1
 
 
